@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom';
 
-const CharactersByHero = ({ alter_ego, characters}) => {
+const CharactersByHero = ({ precio, marca}) => {
     // if ( alter_ego === characters ) return (<></>);
     // return <p>{ characters }</p>
-    return ( alter_ego === characters )
+    return ( precio === marca )
      ? <></>
-     : <p>{ characters }</p>;
+     : <p>{ marca }</p>;
 }
 
 
 export const HeroCard = ({ 
-    id,
-    superhero,
-    publisher,
-    alter_ego,
-    first_appearance,
-    characters ,
+    codigo,
+    nombre,
+    tipo,
+    precio,
+    descripcion,
+    marca ,
 }) => {
 
-    const heroImageUrl = `/assets/heroes/${ id }.jpg`;
+    const heroImageUrl = `/assets/heroes/${ codigo }.jpg`;
 
     // const charactesByHero =  (<p>{ characters }</p>);
 
@@ -30,27 +30,27 @@ export const HeroCard = ({
                 <div className="row no-gutters">
                     
                     <div className="col-4">
-                        <img src={ heroImageUrl } className="card-img" alt={ superhero } />
+                        <img src={ heroImageUrl } className="card-img" alt={ nombre } />
                     </div>
 
                     <div className="col-8">
 
                         <div className="card-body">
 
-                            <h5 className="card-title">{ superhero }</h5>
-                            <p className="card-text">{ alter_ego }</p>
+                            <h5 className="card-title">{ nombre }</h5>
+                            <p className="card-text">{ precio }</p>
 
                             {/* {
                                 ( alter_ego !== characters ) && charactesByHero
                                 ( alter_ego !== characters ) && <p>{ characters }</p>
                             } */}
-                            <CharactersByHero characters={ characters } alter_ego={ alter_ego } />
+                            <CharactersByHero marca={ marca } precio={ precio } />
 
                             <p className="card-text">
-                                <small className="text-muted">{ first_appearance }</small>
+                                <small className="text-muted">{ descripcion }</small>
                             </p>
 
-                            <Link to={`/hero/${ id }`}>
+                            <Link to={`/hero/${ codigo }`}>
                                 Más..
                             </Link>
 

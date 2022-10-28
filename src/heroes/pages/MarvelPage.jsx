@@ -3,10 +3,10 @@ import { HeroList } from '../components';
 export const MarvelPage = () => {
   return (
     <>
-      <h1>Marvel Comics</h1>
+      <h1>Motos</h1>
       <hr />
 
-      <HeroList publisher='Marvel Comics' />
+      <HeroList tipo='moto' />
 
     </>
   )

@@ -1,14 +1,14 @@
 import { heroes } from '../data/heroes';
 
 
-export const getHeroesByPublisher = ( publisher ) =>{
+export const getHeroesByPublisher = ( tipo ) =>{
 
-    const validPublishers = ['DC Comics','Marvel Comics'];
-    if ( !validPublishers.includes( publisher ) ) {
-        throw new Error(`${ publisher } is not a valid publisher`);
+    const validPublishers = ['auto','moto'];
+    if ( !validPublishers.includes( tipo ) ) {
+        throw new Error(`${ tipo } is not a valid tipo`);
     }
 
-    return heroes.filter( heroe => heroe.publisher === publisher );
+    return heroes.filter( heroe => heroe.tipo === tipo );
 }
 
 

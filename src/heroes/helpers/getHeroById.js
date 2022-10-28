@@ -1,7 +1,13 @@
 import { heroes } from '../data/heroes';
 
 
-export const getHeroById = ( id ) => {
+export const getHeroById = ( codigo = '' ) => {
 
-    return heroes.find( hero => hero.id === id );
+    codigo = codigo.toLocaleLowerCase().trim();
+
+    if ( codigo.length === 0 ) return [];
+
+    return heroes.filter(
+        hero => hero.codigo.toLocaleLowerCase().includes( codigo ) 
+    );
 }

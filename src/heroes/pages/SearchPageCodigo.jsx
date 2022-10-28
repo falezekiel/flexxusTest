@@ -3,15 +3,15 @@ import queryString from 'query-string'
 
 import { useForm } from '../../hooks/useForm';
 import { HeroCard } from '../components';
-import { getHeroesByName } from '../helpers';
+import { getHeroById } from '../helpers';
 
-export const SearchPage = () => {
+export const SearchPageCodigo = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const { q = '' } = queryString.parse( location.search );
-  const heroes = getHeroesByName(q);
+  const heroes = getHeroById(q);
 
   const showSearch = (q.length === 0);
   const showError  = (q.length > 0) && heroes.length === 0;
@@ -44,7 +44,7 @@ export const SearchPage = () => {
             <form onSubmit={ onSearchSubmit }>
               <input 
                 type="text"
-                placeholder="Buscar por nombre"
+                placeholder="Buscar por código"
                 className="form-control"
                 name="searchText"
                 autoComplete="off"
