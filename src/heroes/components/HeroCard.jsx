@@ -37,23 +37,21 @@ export const HeroCard = ({
 
                         <div className="card-body">
 
-                            <h5 className="card-title">{ nombre }</h5>
-                            <p className="card-text">{ precio }</p>
+                            <h5 className="card-title">Nombre:{ nombre }</h5>
+                            <p className="card-text"> Precio:{ precio }</p>
+                            <p className='card-tex'>Código: {codigo}</p>
 
                             {/* {
                                 ( alter_ego !== characters ) && charactesByHero
                                 ( alter_ego !== characters ) && <p>{ characters }</p>
                             } */}
-                            <CharactersByHero marca={ marca } precio={ precio } />
+                            <CharactersByHero marca= { marca } precio={ precio } />
 
                             <p className="card-text">
                                 <small className="text-muted">{ descripcion }</small>
                             </p>
 
-                            <Link to={`/hero/${ codigo }`}>
-                                Más..
-                            </Link>
-
+                            
                             
                         </div>
 
