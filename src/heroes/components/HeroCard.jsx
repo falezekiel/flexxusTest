@@ -8,7 +8,7 @@ const CharactersByHero = ({ precio, marca}) => {
      : <p>{ marca }</p>;
 }
 
-
+//info card
 export const HeroCard = ({ 
     codigo,
     nombre,
@@ -36,6 +36,7 @@ export const HeroCard = ({
                     <div className="col-8">
 
                         <div className="card-body">
+
 
                             <h5 className="card-title">Nombre:{ nombre }</h5>
                             <p className="card-text"> Precio:{ precio }</p>
